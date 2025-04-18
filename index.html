@@ -11,15 +11,16 @@
     <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
-    <header class="header">
+    <header class="header" id="headerTop">
         <div class="container">
             <div class="header-wrapper">
+                <button class="burger-menu" onclick="openModal()"></button>
                 <div class="logo"></div>
                 <nav class="nav">
                     <a href="#" class="nav-link">Главная</a>
-                    <a href="#" class="nav-link">Меню</a>
+                    <a href="index.html" class="nav-link">Меню</a>
                     <a href="#" class="nav-link">О нас</a>
-                    <a href="#" class="nav-link">Контакты</a>
+                    <a href="contact.html" class="nav-link">Контакты</a>
                 </nav>
                 <a href="#" class="card">
                     $125 
@@ -32,7 +33,6 @@
             <ul class="breadcrumbs">
                 <li class="breadcrumbs-item"><a class="breadcrumbs-link" href="#">Главная</a>
                 <li class="breadcrumbs-item">Меню</li>
-                </li>
             </ul>
             <h1 class="hero-title">Наше меню</h1>
             <p class="hero-description">Выбирай из предложенного ассортимента и мы доставим блюдо в&nbsp;течении часа</p>
@@ -46,12 +46,12 @@
                     -30%
                 </h2>
                 <p class="banner-description">Только при покупке 3-х и более позиций, мы дарим скидку. Акции не суммируются.</p>
-                <button type="buttom" class="banner-btn">КУПИТЬ СЕЙЧАС</button>
+                <a href="#menuBurger" class="banner-btn">КУПИТЬ СЕЙЧАС</a>
             </div>
         </div>
     </section>
     <main>
-        <section>
+        <section id="menuBurger">
             <div class="container">
                 <div class="menu">
                     <div class="menu-header">
@@ -121,6 +121,7 @@
                 <div class="menu">
                     <div class="menu-header">
                         <h2 class="menu-title">Дополнительно</h2>
+                    </div>
                         <select class="menu-select">
                             <option value="Сортировать" disabled selected>Сортировать</option>
                             <option value="По возростанию цены">По возростанию цены</option>
@@ -128,34 +129,40 @@
                             <option value="Лучшая цена">Лучшая цена</option>                            
                         </select>
                     </div>
-                    <div class="menu-box">
-                        <div class="menu-item">
+                    <div class="menu-box _additionally">
+                        <div class="menu-item _additionally">
                             <div class="menu-thumb">
                                 <img src="images/menu/07.png" alt="Острый бургер">
                             </div>
-                            <h3 class="menu-name">Сэндвич</h3>
-                            <p class="menu-price">$3</p>
-                            <button type="button" class="menu-btn">Купить</button>
+                            <div class="menu-info">
+                                <h3 class="menu-name">Сэндвич</h3>
+                                <p class="menu-price">$3</p>
+                                <button type="button" class="menu-btn">Купить</button>
+                            </div>
                         </div>
-                        <div class="menu-item">
+                        <div class="menu-item _additionally">
                             <div class="menu-thumb">
                                 <img src="images/menu/08.png" alt="Острый бургер">
                             </div>
-                            <h3 class="menu-name">Картошка Фри</h3>
-                            <p class="menu-price">$5</p>
-                            <button type="button" class="menu-btn">Купить</button>
+                            <div class="menu-info">
+                                <h3 class="menu-name">Фри</h3>
+                                <p class="menu-price">$5</p>
+                                <button type="button" class="menu-btn">Купить</button>
+                            </div>
                         </div>
-                        <div class="menu-item">
+                        <div class="menu-item _additionally">
                             <div class="menu-thumb">
                                 <img src="images/menu/09.png" alt="Острый бургер">
                             </div>
-                            <h3 class="menu-name">Хот-Дог</h3>
-                            <p class="menu-price">$7</p>
-                            <button type="button" class="menu-btn">Купить</button>
+                            <div class="menu-info">
+                                <h3 class="menu-name">Хот-Дог</h3>
+                                <p class="menu-price">$7</p>
+                                <button type="button" class="menu-btn">Купить</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+
         </section>
     </main>
     <footer class="footer">
@@ -165,11 +172,13 @@
             <div class="footer-item">
                 <h3 class="footer-title">Основные ссылки</h3>
                 <nav class="footer-nav">
-                    <a href="#" class="footer-link">Меню</a>
+                    <a href="index.html" class="footer-link">Меню</a>
                     <a href="#" class="footer-link">Заказ и Доставка</a>
                     <a href="#" class="footer-link">Методы оплаты</a>
-                    <a href="#" class="footer-link">Контакты</a>
+                    <a href="contact.html" class="footer-link">Контакты</a>
                 </nav>
+                <a class="footer-tel _mobile" href="tel:+79007871313">+ 7 900 787 13-13</a>
+                <a class="footer-tel _mobile" href="tel:+79007871414">+ 7 900 787 14-14</a>
             </div>
             <div class="footer-item">
                 <h3 class="footer-title">Основная информация</h3>
@@ -191,5 +200,16 @@
             </div>
         </div>
     </footer>
+    <a href="#headerTop" class="button-up hidden" id="btnUp">Наверх</a>
+    <div class="modal" id="modal">
+        <nav class="nav _modal">
+            <a href="#" class="nav-link">Главная</a>
+            <a href="index.html" class="nav-link">Меню</a>
+            <a href="#" class="nav-link">О нас</a>
+            <a href="contact.html" class="nav-link">Контакты</a>
+        </nav>
+        <button class="modal-close" onclick="closeModal()"></button>
+    </div>
+    <script src="scripts/script.js"></script>
 </body>
 </html>
